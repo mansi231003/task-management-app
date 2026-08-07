@@ -1,4 +1,4 @@
-import { isOverdue } from "../utils/isOverdue";
+import { isOverdue } from "../utils/isOverDue";
 export default function TaskStats({tasks}){
 
       const totalTasks = tasks.length;
