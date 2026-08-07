@@ -42,20 +42,12 @@ task-management/
 
 ## Installation
 
-### Clone the repository
-
-```bash
-git clone YOUR_REPOSITORY_URL
-```
-
 ### Backend Setup
 
 ```bash
 cd backend
 npm install
 ```
-
-Create a `.env` file:
 
 
 Run backend:
@@ -67,10 +59,22 @@ npm start
 ### Frontend Setup
 
 ```bash
-cd frontend
+cd my-app
 npm install
 npm run dev
 ```
+
+## Screenshots
+
+### Login Page
+![Login](screenshots/login.png)
+
+### Register Page
+![Register](screenshots/register.png)
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
 
 ## Author
 Rajni
