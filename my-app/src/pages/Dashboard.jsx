@@ -8,7 +8,6 @@ import EditTaskForm from "../components/EditTaskForm";
 import TaskForm from "../components/TaskForm";
 import TaskStats from "../components/TaskStats";
 import SearchFilter from "../components/SearchFilter";
-import { isOverdue } from "../utils/isOverdue";
 
 export default function Dashboard() {
     const navigate = useNavigate()
@@ -79,12 +78,8 @@ export default function Dashboard() {
 
             const matchesFilter =
                 filter === "All" ||
-                filter === task.status ||
-                (
-                    filter === "Overdue" &&
-                    isOverdue(task.dueDate) &&
-                    task.status !== "Completed"
-                );
+                filter === task.status 
+             
             return matchesSearch && matchesFilter;
         })
         .sort((a, b) => {
