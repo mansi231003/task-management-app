@@ -1,4 +1,4 @@
-import { isOverdue } from "../utils/isOverdue"
+import { isOverdue } from "../utils/isOverDue"
 
 export default function TaskCard({ task, onDelete, onEdit, onStatusChange, onStartEdit }) {
 
