@@ -11,11 +11,13 @@ export default function Register() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setError("")
         try {
             await registerUser({
                 name,
@@ -33,8 +35,9 @@ export default function Register() {
             navigate("/dashboard");
 
         } catch (error) {
-            console.log(error);
-            alert("Registration failed");
+               console.log(error.response?.data);
+           setError(error.response?.data?.message || "Registration failed");
+            
         }
     };
 
@@ -45,6 +48,11 @@ export default function Register() {
                     <h1 className="text-4xl font-bold flex justify-center gap-2 items-center text-center text-slate-800 mb-6">
                         <UserPlus className="w-7 h-7"/> Register
                     </h1>
+                    {error && 
+                     <p className="text-red-600 text-center bg-red-50 p-3 rounded-lg">
+        {error}
+    </p>
+}
                     <form onSubmit={handleSubmit} className="space-y-5">
                         <div>
                             <label className="block text-gray-700 font-medium mb-2">Name</label>

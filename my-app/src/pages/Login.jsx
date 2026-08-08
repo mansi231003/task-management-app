@@ -10,10 +10,11 @@ export default function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+setError("")
         try {
             const { data } = await loginUser({
                 email,
@@ -24,7 +25,7 @@ export default function Login() {
 
         } catch (error) {
             console.log(error);
-            alert("Invalid credentials");
+            setError(error.response?.data?.message || "Login failed");
         }
     };
 
@@ -37,6 +38,11 @@ export default function Login() {
                     <h1 className="text-4xl font-bold flex justify-center items-end gap-2 text-center text-slate-800 mb-6">
                     <UserLock className="w-8 h-8"/> Login
                     </h1>
+                    {error && (
+    <p className="text-red-600 text-center bg-red-50 p-3 rounded-lg">
+        {error}
+    </p>
+)}
                     <form onSubmit={handleSubmit} className="space-y-5">
                         <div>
                             <label className="block text-gray-700 font-medium mb-2">Email</label>
