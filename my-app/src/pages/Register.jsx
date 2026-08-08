@@ -48,32 +48,30 @@ export default function Register() {
                     <h1 className="text-4xl font-bold flex justify-center gap-2 items-center text-center text-slate-800 mb-6">
                         <UserPlus className="w-7 h-7"/> Register
                     </h1>
-                    {error && 
-                     <p className="text-red-600 text-center bg-red-50 p-3 rounded-lg">
-        {error}
-    </p>
-}
+  
                     <form onSubmit={handleSubmit} className="space-y-5">
                         <div>
                             <label className="block text-gray-700 font-medium mb-2">Name</label>
-                            <input className="w-full border rounded-lg px-4 py-3
-                                focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            <input className="w-full border rounded-lg px-4 py-3"
                                 type="text" placeholder="Enter name" value={name}
                                 onChange={(e)=>setName(e.target.value)}/>
                         </div>
                         <div>
                             <label className="block text-gray-700 font-medium mb-2">Email</label>
-                            <input className="w-full border rounded-lg px-4 py-3
-                                focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            <input className="w-full border rounded-lg px-4 py-3"
                                 type="email" placeholder="Enter email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                         </div>
                         <div>
                             <label className="block text-gray-700 font-medium mb-2">Password</label>
-                            <input className="w-full border rounded-lg px-4 py-3 focus:outline-none
-                                focus:ring-2 focus:ring-blue-500"
+                            <input className="w-full border rounded-lg px-4 py-3"
                                 type="password" placeholder="Enter password" value={password}
                                 onChange={(e)=>setPassword(e.target.value)}/>
                         </div>
+                                         {error && (
+    <p className="text-red-600 text-center bg-red-50 p-3 rounded-lg">
+        {error}
+    </p>
+)}
                         <button className="w-full bg-blue-600 hover:bg-blue-700 text-white
                             py-3 rounded-lg font-semibold text-lg transition shadow-md"
                             type="submit">

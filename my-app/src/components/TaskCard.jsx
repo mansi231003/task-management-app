@@ -5,7 +5,7 @@ export default function TaskCard({ task, onDelete, onEdit, onStatusChange, onSta
     return (
         <>
             <h3 className="text-lg font-semibold text-slate-800">{task.title}</h3>
-            <p className={`px-3 py-2 rounded-full text-white font-medium ${task.priority === "High" ? "bg-red-500"
+            <p className={`px-3 py-2 rounded-full w-max text-white font-medium ${task.priority === "High" ? "bg-red-500"
                 : task.priority === "Medium" ? "bg-yellow-500"
                     : "bg-green-500"}`}>Priority: {task.priority}</p>
             <p className="text-gray-600">

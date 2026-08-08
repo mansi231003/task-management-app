@@ -144,7 +144,7 @@ export default function Dashboard() {
                     />
 
                     {filteredTasks.map(task => (
-                        <div className="bg-white rounded-xl shadow-lg p-5 flex flex-wrap items-center justify-between gap-4" key={task._id}>
+                        <div className="bg-white rounded-xl shadow-lg p-5 max-[500px]:flex-1 max-[500px]:block max-[500px]:space-y-4 flex flex-wrap items-center justify-between gap-4" key={task._id}>
                             {
                                 editId === task._id ? (
                                     <EditTaskForm task={task}

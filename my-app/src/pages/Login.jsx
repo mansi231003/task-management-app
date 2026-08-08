@@ -14,7 +14,7 @@ export default function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-setError("")
+        setError("")
         try {
             const { data } = await loginUser({
                 email,
@@ -36,28 +36,28 @@ setError("")
             <div className="w-full max-w-md p-4">
                 <div className="bg-white rounded-2xl shadow-xl p-8">
                     <h1 className="text-4xl font-bold flex justify-center items-end gap-2 text-center text-slate-800 mb-6">
-                    <UserLock className="w-8 h-8"/> Login
+                        <UserLock className="w-8 h-8" /> Login
                     </h1>
-                    {error && (
-    <p className="text-red-600 text-center bg-red-50 p-3 rounded-lg">
-        {error}
-    </p>
-)}
+
                     <form onSubmit={handleSubmit} className="space-y-5">
                         <div>
                             <label className="block text-gray-700 font-medium mb-2">Email</label>
                             <input
-                                className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full border rounded-lg px-4 py-3 "
                                 type="email" placeholder="Enter email" value={email}
-                                onChange={(e)=>setEmail(e.target.value)}/>
+                                onChange={(e) => setEmail(e.target.value)} />
                         </div>
                         <div>
                             <label className="block text-gray-700 font-medium mb-2">Password</label>
-                            <input className=" w-full border rounded-lg px-4 py-3 focus:outline-none
-                                focus:ring-2 focus:ring-blue-500"
-                                type="password" placeholder="Enter password" value={password} onChange={(e)=>setPassword(e.target.value)}
+                            <input className=" w-full border rounded-lg px-4 py-3"
+                                type="password" placeholder="Enter password" value={password} onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
+                        {error && (
+                            <p className="text-red-600 text-center bg-red-50 p-3 rounded-lg">
+                                {error}!
+                            </p>
+                        )}
                         <button
                             className=" w-full bg-blue-600 hover:bg-blue-700 text-white
                             py-3 rounded-lg font-semibold text-lg transition shadow-md" type="submit">
